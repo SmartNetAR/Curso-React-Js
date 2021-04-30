@@ -14,21 +14,28 @@ class App extends React.Component{
   }
     eliminarProducto= (producto) =>
     {
-      let i = this.state.products.indexOf(producto);
-
-      if(i !== -1){
+      let i = this.state.products.indexOf(producto); 
+      if(i !== -1)
+      {
         this.state.products.splice(i,1);
-        alert("se elimino");
-        this.setState(this.products);
-    }
+        this.setState(this.state.products);    //actualizo el estado
+      }
   
-  }
+    }
+    agregarProducto = (producto) => 
+    {
+      this.state.products.push(producto);
+      this.setState(this.state.products);
+    }
 
   render(){
     return (
       <div className="App App-header">
 
-        <ProductsList listaProductos = { this.state.products } onDelete={ this.eliminarProducto }/>
+        <ProductsList listaProductos = { this.state.products }
+                      onDelete={ this.eliminarProducto }    //borro un producto
+                      addProduct = { this.agregarProducto }  //agrego un producto
+        />
         
       </div>
     );
