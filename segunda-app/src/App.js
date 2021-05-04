@@ -50,9 +50,12 @@ class App extends React.Component{
         count:0
       });
     }
-    changeAtributes = (name,count) =>
-    {
-
+    changeAtributes = (event) =>
+    { 
+      const nombre = event.target.name;
+        this.setState({
+          [nombre]: event.target.value,
+        });
     }
 
   render(){
@@ -62,7 +65,9 @@ class App extends React.Component{
         <Form listaProductos = { this.state.products } 
               cancel = { this.handleCancel }
               submitProduct = { this.handleSubmit }
-              cambioAtributos ={ this.changeAtributes } />
+              cambioAtributos ={ this.changeAtributes } 
+              nombre = { this.state.name }
+              cantidad = { this.state.count }/>
 
         <ProductsList listaProductos = { this.state.products }
                       onDelete={ this.eliminarProducto }    //borro un producto
