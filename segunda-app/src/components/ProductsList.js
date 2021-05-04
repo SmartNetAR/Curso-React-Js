@@ -18,12 +18,7 @@ class ProductsList extends React.Component{
                     })}
 
                 </ul>
-                    <form className="form-group">
-                        <input type="text"  name="id" placeholder="Id"/>            
-                        <input type="text" name="name" placeholder="name"/>
-                        <input type="number" name="count" placeholder="quantity"/>
-                        <button className="btn btn-success ml-3">Agregar</button>
-                    </form>
+
             </div>
         )
     }
