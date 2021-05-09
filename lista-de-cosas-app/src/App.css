@@ -1,0 +1,12 @@
+body{
+  background-color: #282c34;
+}
+.App{
+  color: white;
+}
+.container{
+  width: 50%!important;
+}
+.description-form{
+  margin-top: 2rem!important;
+}
