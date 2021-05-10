@@ -10,10 +10,12 @@ class CardList extends React.Component
                     <div key={ task.id } className="col-md-6">   
                         <h2>{ task.title.toString() } </h2>
                         <p> { task.description.toString() }</p>
-                        <button type="button" className="btn btn-danger" onClick={() => { this.props.doneTask(task.id) }}>
+                        
+                        <button type="button" className="btn btn-warning" onClick={() => { this.props.doneTask(task.id) }}>
                             {(task.stateList == true)?this.props.reHacer:this.props.done}</button>
-                        <hr/>
 
+                        <button type="button" className="btn btn-danger margen" onClick={() =>{ this.props.deleteTask(task.id)}}>Eliminar tarea</button>
+                        <hr/>
                     </div> 
                 );
             })}

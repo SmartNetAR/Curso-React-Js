@@ -12,7 +12,8 @@ class App extends React.Component
    title:"",
    description:"",
    reHacer:"Re Hacer",
-   done: "hacer"
+   done: "hacer",
+   allTasks: true
   }
   addList = (event) =>
   {
@@ -39,6 +40,22 @@ class App extends React.Component
     this.setState({
         [nombre] : event.target.value,
     });
+  }
+  deleteTask = (idTask) =>{
+    let array = [...this.state.tasks];
+    let pos;
+    for(let i=0; i<array.length; i++)
+    {
+      if(array[i].id == idTask){
+        pos = i;
+      }
+    }
+    alert("Eliminaste la tarea" + array[pos].title );
+   array.splice(pos,1);
+   this.setState({
+     tasks : array,
+   })
+
   }
   doneTask = (idTask) =>{
     let array = [...this.state.tasks];
@@ -74,6 +91,7 @@ class App extends React.Component
                   doneTask = { this.doneTask }
                   reHacer = { this.state.reHacer }
                   done = { this.state.done }
+                  deleteTask = { this.deleteTask }
                 />
            </div> 
            <div className="col-md-4">
@@ -84,6 +102,7 @@ class App extends React.Component
                   doneTask = { this.doneTask }
                   reHacer = { this.state.reHacer }
                   done = { this.state.done }
+                  deleteTask = { this.deleteTask }
                 />
               
            </div> 
@@ -92,6 +111,8 @@ class App extends React.Component
                 <hr/>   
                 <CardList 
                   tasks = { this.state.tasks }
+                  allTasks = { this.state.allTasks }
+                  deleteTask = { this.deleteTask }
                 />
 
            </div> 
