@@ -5,15 +5,9 @@ import CardList from './components/CardList'
 class App extends React.Component
 {
   state= {
-    tasks: [
-      { id: 1, title: "Hacer el tp", description: "Realizar el tp para el lunes de react", stateList: false},
-      { id: 2, title: "Comprar comida", description: "Ir al supermercado a comprar comida", stateList: false},
-   ],
+   tasks: [],
    title:"",
    description:"",
-   reHacer:"Re Hacer",
-   done: "hacer",
-   allTasks: true
   }
   addList = (event) =>
   {
@@ -32,6 +26,25 @@ class App extends React.Component
     })
     console.log(this.state.tasks);
 
+  }
+  componentDidMount(){
+      this.getData();
+  }
+
+  //Conecto con la api local
+   getData = async() =>
+  {
+    try{
+      const url = "http://localhost:3000/Tareas.json";
+      let resp = await fetch(url);
+      let data = await resp.json();
+
+      this.setState({
+        tasks: data
+      })
+    }catch(error){
+       alert(error.message);
+    }
   }
 
   changeAtributes = (event) =>
@@ -113,6 +126,7 @@ class App extends React.Component
                   tasks = { this.state.tasks }
                   allTasks = { this.state.allTasks }
                   deleteTask = { this.deleteTask }
+                  doneTask = { this.doneTask }
                 />
 
            </div> 

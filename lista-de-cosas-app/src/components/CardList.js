@@ -12,7 +12,7 @@ class CardList extends React.Component
                         <p> { task.description.toString() }</p>
                         
                         <button type="button" className="btn btn-warning" onClick={() => { this.props.doneTask(task.id) }}>
-                            {(task.stateList == true)?this.props.reHacer:this.props.done}</button>
+                            {(task.stateList == true)? "rehacer":"hacer"}</button>
 
                         <button type="button" className="btn btn-danger margen" onClick={() =>{ this.props.deleteTask(task.id)}}>Eliminar tarea</button>
                         <hr/>
