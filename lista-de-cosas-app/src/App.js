@@ -21,24 +21,40 @@ class App extends React.Component
     }
     console.log(task)
     array.push(task);
+    this.updateLocalStorage(array);
     this.setState({
       tasks: array
     })
     console.log(this.state.tasks);
 
   }
+  //compurebo si tengo informacion dentro del local storage
   componentDidMount(){
+    let data;
+    if(!localStorage.getItem("tareas")){
       this.getData();
+    }else{
+      data = JSON.parse(localStorage.getItem("tareas"));
+      this.setState({
+         tasks: data
+      })
+    }
+      
+  }
+  //guardo info y actualzio el local stotrage
+  updateLocalStorage = (tasks)=>{
+    localStorage.setItem("tareas",JSON.stringify(tasks));
   }
 
   //Conecto con la api local
    getData = async() =>
-  {
+  { 
     try{
       const url = "http://localhost:3000/Tareas.json";
       let resp = await fetch(url);
       let data = await resp.json();
-
+      console.log("data2");
+      console.log(data);
       this.setState({
         tasks: data
       })

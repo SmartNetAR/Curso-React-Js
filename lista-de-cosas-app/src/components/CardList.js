@@ -11,7 +11,7 @@ class CardList extends React.Component
                         <h2>{ task.title.toString() } </h2>
                         <p> { task.description.toString() }</p>
                         
-                        <button type="button" className="btn btn-warning" onClick={() => { this.props.doneTask(task.id) }}>
+                        <button type="button" className="btn btn-primary" onClick={() => { this.props.doneTask(task.id) }}>
                             {(task.stateList == true)? "rehacer":"hacer"}</button>
 
                         <button type="button" className="btn btn-danger margen" onClick={() =>{ this.props.deleteTask(task.id)}}>Eliminar tarea</button>
