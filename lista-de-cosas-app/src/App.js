@@ -101,6 +101,10 @@ class App extends React.Component
    })
 
   }
+   updateTask = (event) =>{
+     event.preventDefault();
+      alert("hola");
+   }
 
   render(){
     return (
@@ -112,7 +116,7 @@ class App extends React.Component
             description = { this.state.description }        
             />
       <div className="row text-center">
-            <div className="col-md-4">   
+            <div className="col-md-4 borde">   
                 <h2>Tareas a realizar</h2>
                 <hr/>
                 <CardList 
@@ -121,9 +125,10 @@ class App extends React.Component
                   reHacer = { this.state.reHacer }
                   done = { this.state.done }
                   deleteTask = { this.deleteTask }
+                  updateTask = { this.updateTask }
                 />
            </div> 
-           <div className="col-md-4">
+           <div className="col-md-4 borde">
                 <h2>Tareas realizadas</h2>
                 <hr/>
                 <CardList 
@@ -132,6 +137,7 @@ class App extends React.Component
                   reHacer = { this.state.reHacer }
                   done = { this.state.done }
                   deleteTask = { this.deleteTask }
+                  updateTask = { this.updateTask }
                 />
               
            </div> 
@@ -143,6 +149,7 @@ class App extends React.Component
                   allTasks = { this.state.allTasks }
                   deleteTask = { this.deleteTask }
                   doneTask = { this.doneTask }
+                  updateTask = { this.updateTask }
                 />
 
            </div> 

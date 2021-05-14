@@ -8,7 +8,7 @@ class Form extends React.Component
             <div className="text-center container">  
                 <h1>Lista de tareas:</h1>
 
-                <form className="form-group" onSubmit={ this.props.addList }>
+                <form className="form-group" onSubmit={ (!this.props.updateTask )?this.props.addList:this.props.updateTask }>
                     <label className="description-form"  for="title">Titulo:</label>
                     <input 
                         type="text"

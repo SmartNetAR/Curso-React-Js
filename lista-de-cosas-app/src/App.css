@@ -1,8 +1,14 @@
 body{
   background-color: #282c34;
 }
+.modalFondo{
+  background-color: #282c34;
+}
 .App{
   color: white;
+}
+.Formulario{
+  color: rgb(10, 10, 10)!important;
 }
 .container{
   width: 50%!important;
@@ -11,5 +17,11 @@ body{
   margin-top: 2rem!important;
 }
 .margen{
-  margin-left: 2rem!important;
+  margin-left: 1.5rem!important;
+}
+.margenSuperior{
+  margin-top: 1.5rem!important;
+}
+.borde{
+  border-right: 1px solid rgb(128, 124, 124);
 }
