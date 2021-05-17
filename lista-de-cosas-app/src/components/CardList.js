@@ -3,6 +3,9 @@ import Form from "../components/Form";
 
 class CardList extends React.Component
 {
+    changeId =(id) =>{
+      this.props.changeId(id);
+    }
     render(){
         return(          
         <div className="row text-center">

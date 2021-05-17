@@ -8,6 +8,7 @@ class App extends React.Component
    tasks: [],
    title:"",
    description:"",
+   idTask:0,
   }
   addList = (event) =>
   {
@@ -79,13 +80,15 @@ class App extends React.Component
         pos = i;
       }
     }
-    alert("Eliminaste la tarea" + array[pos].title );
+    alert("Eliminaste la tarea " + array[pos].title );
    array.splice(pos,1);
+   this.updateLocalStorage(array);
    this.setState({
      tasks : array,
    })
 
   }
+  //cambio de estado de la tarea
   doneTask = (idTask) =>{
     let array = [...this.state.tasks];
     let pos;
@@ -96,14 +99,23 @@ class App extends React.Component
       }
     }
    array[pos].stateList = !array[pos].stateList;
+   this.updateLocalStorage(array);
    this.setState({
      tasks : array,
    })
 
   }
+
    updateTask = (event) =>{
      event.preventDefault();
-      alert("hola");
+     alert("hola");
+   }
+   
+   changeId = (id) =>{
+     console.log(id);
+     this.setState({
+      idTask: id
+     })
    }
 
   render(){
@@ -126,6 +138,7 @@ class App extends React.Component
                   done = { this.state.done }
                   deleteTask = { this.deleteTask }
                   updateTask = { this.updateTask }
+                  changeId = { this.changeId }
                 />
            </div> 
            <div className="col-md-4 borde">
