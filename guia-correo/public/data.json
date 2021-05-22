@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "nro-envio": 1122,
+        "fecha": "01/02/2021",
+        "descripcion": "descripción de envío 1122",
+        "estado": "despachado"
+    },
+    {
+        "id": 2,
+        "nro-envio": 1122,
+        "fecha": "02/02/2021",
+        "descripcion": "descripción de envío 1122",
+        "estado": "en camino"
+    },
+    {
+        "id": 3,
+        "nro-envio": 4455,
+        "fecha": "03/04/2021",
+        "descripcion": "descripción de envío 4455",
+        "estado": "despachado"
+    },
+    {
+        "id": 4,
+        "nro-envio": 4455,
+        "fecha": "05/05/2021",
+        "descripcion": "descripción de envío 4455",
+        "estado": "entregado"
+    }
+]
