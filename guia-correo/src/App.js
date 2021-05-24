@@ -24,7 +24,7 @@ function App() {
   
   const handleSearch = (idEnvio) =>
   {
-    const result = envios.filter(id => id["nro-envio"] == idEnvio);
+    const result = envios.filter(id => id["nro-envio"] === idEnvio);
     console.log(result);
     setEnvio(result);
   }
