@@ -4,7 +4,7 @@ import Search from './components/Search'
 import List from './components/List'
 
 function App() {
-
+  process.env.CI = false;
   const [envios, setEnvios] = useState([]);
   const [envio, setEnvio] = useState([]);
   //use effect para cuando el componente se reenderiza
