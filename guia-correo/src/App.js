@@ -14,7 +14,7 @@ function App() {
 
   const getData = async () =>
   {
-      const url = "https://curso-react-js-cambio.vercel.app/data.json";
+      const url = "https://curso-react-js-guia-correro.vercel.app/data.json";
       //comento
       const response = await fetch(url);
       const data = await response.json();
