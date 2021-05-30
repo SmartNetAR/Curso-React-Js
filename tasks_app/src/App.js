@@ -9,7 +9,6 @@ import { useEffect, useState } from 'react';
 function App() {
    const[tasks,setTasks] = useState([]);
    
-
      useEffect(() =>{
       getData();
     }, []);
@@ -25,13 +24,15 @@ function App() {
      
      setTasks(data);
    }
-
+   const handleSubmit = (newArrayTask)=>{
+     console.log(newArrayTask);
+     setTasks(newArrayTask);
+   }
 
   return (
-    <>
       <div className="App container-fluid text-center"> 
             <h1 className="display-4 my-3">Task App</h1>
-            <ModalTask agregarString="Agregar"/>
+            <ModalTask agregarString="Agregar" tasks={ tasks } handleSubmit={ handleSubmit }/>
             <div class="row mt-4">
               
                 <div className="col-md-4">
@@ -51,8 +52,6 @@ function App() {
                 </div>  
             </div>
       </div>
-
-    </>
   );
 }
 
