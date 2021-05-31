@@ -24,10 +24,11 @@ function App() {
      
     setTasks(data);
    }
-   const handleSubmit = (newArrayTask)=>{
-     setTasks(newArrayTask);
-     console.log(tasks);
-   }
+
+  const handleSubmit = (newArrayTask) => {
+
+    setTasks(newArrayTask);
+  }
 
   return (
       <div className="App container-fluid text-center"> 
