@@ -5,7 +5,6 @@ function CardList(props){
         <>
         {
             props.tasks.map(task =>{
-            console.log(task);
             return(
             <div key={ task.id } className="card mb-3">
                 <div className="card-body">

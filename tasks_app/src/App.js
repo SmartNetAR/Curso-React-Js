@@ -7,7 +7,7 @@ import CardList from "./components/CardList";
 import { useEffect, useState } from 'react';
 
 function App() {
-   const[tasks,setTasks] = useState([]);
+   const [tasks,setTasks] = useState([]);
    
      useEffect(() =>{
       getData();
@@ -22,11 +22,11 @@ function App() {
      
      const data = await resp.json();
      
-     setTasks(data);
+    setTasks(data);
    }
    const handleSubmit = (newArrayTask)=>{
-     console.log(newArrayTask);
      setTasks(newArrayTask);
+     console.log(tasks);
    }
 
   return (
